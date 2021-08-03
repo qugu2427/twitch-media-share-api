@@ -32,7 +32,7 @@ io.on("connection", function (socket) {
   }
   socket.emit("setQueue", data.getQueue());
   socket.on("getConnections", () => {
-    socket.emit(data.getConnections());
+    socket.emit("connections", data.getConnections());
   });
   socket.on("disconnect", () => {
     data.decrementConnections();
